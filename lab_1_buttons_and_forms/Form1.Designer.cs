@@ -36,10 +36,13 @@ namespace lab_1_buttons_and_forms
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblTimer = new System.Windows.Forms.Label();
             this.tbScore = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nameProgram = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbType
             // 
+            this.tbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbType.Location = new System.Drawing.Point(301, 249);
             this.tbType.Name = "tbType";
             this.tbType.Size = new System.Drawing.Size(170, 23);
@@ -49,6 +52,7 @@ namespace lab_1_buttons_and_forms
             // 
             // btnStart
             // 
+            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.Location = new System.Drawing.Point(301, 191);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(170, 23);
@@ -59,6 +63,7 @@ namespace lab_1_buttons_and_forms
             // 
             // tbSource
             // 
+            this.tbSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbSource.Location = new System.Drawing.Point(301, 220);
             this.tbSource.Name = "tbSource";
             this.tbSource.ReadOnly = true;
@@ -73,15 +78,19 @@ namespace lab_1_buttons_and_forms
             // 
             // lblTimer
             // 
-            this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(377, 173);
+            this.lblTimer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTimer.AutoEllipsis = true;
+            this.lblTimer.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTimer.ForeColor = System.Drawing.Color.White;
+            this.lblTimer.Location = new System.Drawing.Point(367, 151);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(13, 15);
+            this.lblTimer.Size = new System.Drawing.Size(58, 37);
             this.lblTimer.TabIndex = 7;
             this.lblTimer.Text = "0";
             // 
             // tbScore
             // 
+            this.tbScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbScore.Location = new System.Drawing.Point(239, 279);
             this.tbScore.Name = "tbScore";
             this.tbScore.ReadOnly = true;
@@ -89,11 +98,33 @@ namespace lab_1_buttons_and_forms
             this.tbScore.TabIndex = 8;
             this.tbScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
+            // 
+            // nameProgram
+            // 
+            this.nameProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nameProgram.AutoSize = true;
+            this.nameProgram.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nameProgram.ForeColor = System.Drawing.Color.White;
+            this.nameProgram.Location = new System.Drawing.Point(110, 86);
+            this.nameProgram.Name = "nameProgram";
+            this.nameProgram.Size = new System.Drawing.Size(565, 65);
+            this.nameProgram.TabIndex = 9;
+            this.nameProgram.Text = "WORD PER MINUTE TEST";
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nameProgram);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbScore);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.tbSource);
@@ -113,6 +144,8 @@ namespace lab_1_buttons_and_forms
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.TextBox tbScore;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label nameProgram;
     }
 }
 

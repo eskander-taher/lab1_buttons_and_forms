@@ -32,6 +32,7 @@ namespace lab_1_buttons_and_forms
             timer_ticks = 60;
             lblTimer.Text = timer_ticks.ToString();
             started = false;
+            tbType.Focus();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace lab_1_buttons_and_forms
             timer_ticks = 60;
             lblTimer.Text = timer_ticks.ToString();
             started = true;
+            tbType.Focus();
         }
 
         private void tbType_TextChanged(object sender, EventArgs e)
@@ -85,6 +87,10 @@ namespace lab_1_buttons_and_forms
         private void timer_Tick(object sender, EventArgs e)
         {
             lblTimer.Text =  (timer_ticks--).ToString();
+            if(timer_ticks < 10)
+            {
+                lblTimer.ForeColor = Color.Red;
+            }
             if (timer_ticks < 0)
             {
                 timer.Stop();
@@ -96,6 +102,7 @@ namespace lab_1_buttons_and_forms
                 tbScore.Text = "Your CPM is: "+ char_counter.ToString() + ", WPM: " + (char_counter/ 5 ).ToString() + ", Wrong words: " + wrong_counter.ToString();
                 char_counter = 0;
                 btnStart.Text = "Start";
+                lblTimer.ForeColor = Color.White;
                 started = false;
             }   
         }
