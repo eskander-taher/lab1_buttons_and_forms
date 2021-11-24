@@ -28,9 +28,9 @@ namespace lab_1_buttons_and_forms
             tbType.Text = "";
             tbScore.Text = "Your CPM is: 0, WPM: 0, Wrong words: 0";
             wrong_counter = 0;
-            timer.Stop();
+            //timer.Stop();
             timer_ticks = 60;
-            lblTimer.Text = "60";
+            lblTimer.Text = timer_ticks.ToString();
             started = false;
         }
 
@@ -45,7 +45,7 @@ namespace lab_1_buttons_and_forms
             wrong_counter = 0;
             timer.Stop();
             timer_ticks = 60;
-            lblTimer.Text = "60";
+            lblTimer.Text = timer_ticks.ToString();
             started = true;
         }
 
@@ -93,8 +93,9 @@ namespace lab_1_buttons_and_forms
                 arr_counter = 0;
                 tbSource.Text = WORDS[arr_counter];
                 tbType.Text = "";
-                tbScore.Text = "Your CPM is: "+ char_counter.ToString() + ", WPM: " + (char_counter/5).ToString() + ", Wrong words: " + wrong_counter.ToString();
+                tbScore.Text = "Your CPM is: "+ char_counter.ToString() + ", WPM: " + (char_counter/ 5 ).ToString() + ", Wrong words: " + wrong_counter.ToString();
                 char_counter = 0;
+                btnStart.Text = "Start";
                 started = false;
             }   
         }
