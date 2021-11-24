@@ -19,6 +19,9 @@ namespace lab_1_buttons_and_forms
 
         public int arr_counter = 0;
         public int correct_counter = 0;
+        public int char_counter = 0;
+
+        int timer_ticks;
 
         public string[] WORDS = new string[] { "follow","children","door","follow","drive","air","walk","round","which","force","early","world","cold","free","always" };
 
@@ -29,7 +32,8 @@ namespace lab_1_buttons_and_forms
             correct_counter = 0;
             tbSource.Text = WORDS[arr_counter];
             tbType.Text = "";
-            lblScore.Text = "0";
+            tbScore.Text = "0";
+            timer.Start();
         }
 
         private void tbType_TextChanged(object sender, EventArgs e)
@@ -40,18 +44,37 @@ namespace lab_1_buttons_and_forms
                 if (arr_counter >= WORDS.Length - 1)
                     arr_counter = 0;
 
+                char_counter++;
+                char_counter += tbSource.Text.Length;
                 tbType.Text = tbType.Text.Remove(tbType.Text.Length - 1);//remove the space to compare
 
                 if (string.Equals(WORDS[arr_counter], tbType.Text))
                 {
                     correct_counter++;
-                    lblScore.Text = correct_counter.ToString();
+                    tbScore.Text = "Your CPM is: " + char_counter.ToString() + " and WPM: " + (char_counter / 5).ToString();
                 }
 
                 arr_counter++;
                 tbSource.Text = WORDS[arr_counter];
                 tbType.Text = "";
             }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblTimer.Text =  (timer_ticks++).ToString();
+            if (timer_ticks > 60)
+            {
+                timer.Stop();
+                timer_ticks = 0;
+                lblTimer.Text = "0";
+                arr_counter = 0;
+                tbSource.Text = WORDS[arr_counter];
+                tbType.Text = "";
+                tbScore.Text = "Your CPM is: "+ char_counter.ToString() + " and WPM: " + (char_counter/5).ToString();
+                char_counter = 0;
+            }
+                
         }
     }
 }

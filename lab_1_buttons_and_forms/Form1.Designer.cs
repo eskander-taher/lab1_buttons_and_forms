@@ -29,10 +29,13 @@ namespace lab_1_buttons_and_forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbType = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.tbSource = new System.Windows.Forms.TextBox();
-            this.lblScore = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.tbScore = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbType
@@ -62,22 +65,35 @@ namespace lab_1_buttons_and_forms
             this.tbSource.TabIndex = 5;
             this.tbSource.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblScore
+            // timer
             // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(383, 275);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(13, 15);
-            this.lblScore.TabIndex = 6;
-            this.lblScore.Text = "0";
-            this.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(383, 158);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(13, 15);
+            this.lblTimer.TabIndex = 7;
+            this.lblTimer.Text = "0";
+            // 
+            // tbScore
+            // 
+            this.tbScore.Location = new System.Drawing.Point(301, 279);
+            this.tbScore.Name = "tbScore";
+            this.tbScore.Size = new System.Drawing.Size(170, 23);
+            this.tbScore.TabIndex = 8;
+            this.tbScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.tbScore);
+            this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.tbSource);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.tbType);
@@ -92,7 +108,9 @@ namespace lab_1_buttons_and_forms
         private System.Windows.Forms.TextBox tbType;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.TextBox tbSource;
-        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.TextBox tbScore;
     }
 }
 
