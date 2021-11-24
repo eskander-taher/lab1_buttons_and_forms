@@ -28,6 +28,7 @@ namespace lab_1_buttons_and_forms
             tbType.Text = "";
             tbScore.Text = "Your CPM is: 0, WPM: 0, Wrong words: 0";
             wrong_counter = 0;
+
             //timer.Stop();
             timer_ticks = 60;
             lblTimer.Text = timer_ticks.ToString();
@@ -87,10 +88,11 @@ namespace lab_1_buttons_and_forms
         private void timer_Tick(object sender, EventArgs e)
         {
             lblTimer.Text =  (timer_ticks--).ToString();
+
+            //turn number color to red at the last 10 seconds
             if(timer_ticks < 10)
-            {
                 lblTimer.ForeColor = Color.Red;
-            }
+
             if (timer_ticks < 0)
             {
                 timer.Stop();

@@ -37,7 +37,8 @@ namespace lab_1_buttons_and_forms
             this.lblTimer = new System.Windows.Forms.Label();
             this.tbScore = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.nameProgram = new System.Windows.Forms.Label();
+            this.cbRecord = new System.Windows.Forms.CheckBox();
+            this.lblTypeTest = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbType
@@ -53,12 +54,13 @@ namespace lab_1_buttons_and_forms
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStart.BackColor = System.Drawing.Color.Aquamarine;
             this.btnStart.Location = new System.Drawing.Point(301, 191);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(170, 23);
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // tbSource
@@ -105,17 +107,29 @@ namespace lab_1_buttons_and_forms
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
-            // nameProgram
+            // cbRecord
             // 
-            this.nameProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameProgram.AutoSize = true;
-            this.nameProgram.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameProgram.ForeColor = System.Drawing.Color.White;
-            this.nameProgram.Location = new System.Drawing.Point(110, 86);
-            this.nameProgram.Name = "nameProgram";
-            this.nameProgram.Size = new System.Drawing.Size(565, 65);
-            this.nameProgram.TabIndex = 9;
-            this.nameProgram.Text = "WORD PER MINUTE TEST";
+            this.cbRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbRecord.AutoSize = true;
+            this.cbRecord.ForeColor = System.Drawing.Color.White;
+            this.cbRecord.Location = new System.Drawing.Point(288, 308);
+            this.cbRecord.Name = "cbRecord";
+            this.cbRecord.Size = new System.Drawing.Size(194, 19);
+            this.cbRecord.TabIndex = 10;
+            this.cbRecord.Text = "Keep tracking of my best record";
+            this.cbRecord.UseVisualStyleBackColor = true;
+            // 
+            // lblTypeTest
+            // 
+            this.lblTypeTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTypeTest.AutoSize = true;
+            this.lblTypeTest.Font = new System.Drawing.Font("Segoe UI", 34F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTypeTest.ForeColor = System.Drawing.Color.White;
+            this.lblTypeTest.Location = new System.Drawing.Point(239, 89);
+            this.lblTypeTest.Name = "lblTypeTest";
+            this.lblTypeTest.Size = new System.Drawing.Size(289, 62);
+            this.lblTypeTest.TabIndex = 11;
+            this.lblTypeTest.Text = "TYPING TEST";
             // 
             // formMain
             // 
@@ -123,7 +137,8 @@ namespace lab_1_buttons_and_forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.nameProgram);
+            this.Controls.Add(this.lblTypeTest);
+            this.Controls.Add(this.cbRecord);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbScore);
             this.Controls.Add(this.lblTimer);
@@ -145,7 +160,8 @@ namespace lab_1_buttons_and_forms
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.TextBox tbScore;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label nameProgram;
+        private System.Windows.Forms.CheckBox cbRecord;
+        private System.Windows.Forms.Label lblTypeTest;
     }
 }
 
