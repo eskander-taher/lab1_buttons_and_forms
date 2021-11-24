@@ -18,8 +18,9 @@ namespace lab_1_buttons_and_forms
         }
 
         public int arr_counter = 0;
-        public int correct_counter = 0;
+        //public int correct_counter = 0;
         public int char_counter = 0;
+        public int wrong_counter = 0;
 
         int timer_ticks;
 
@@ -29,7 +30,6 @@ namespace lab_1_buttons_and_forms
         {
             //here I initilize the programm with all fields empty
             arr_counter = 0;
-            correct_counter = 0;
             tbSource.Text = WORDS[arr_counter];
             tbType.Text = "";
             tbScore.Text = "0";
@@ -44,14 +44,18 @@ namespace lab_1_buttons_and_forms
                 if (arr_counter >= WORDS.Length - 1)
                     arr_counter = 0;
 
-                char_counter++;
-                char_counter += tbSource.Text.Length;
+                
                 tbType.Text = tbType.Text.Remove(tbType.Text.Length - 1);//remove the space to compare
 
                 if (string.Equals(WORDS[arr_counter], tbType.Text))
                 {
-                    correct_counter++;
-                    tbScore.Text = "Your CPM is: " + char_counter.ToString() + " and WPM: " + (char_counter / 5).ToString();
+                    char_counter++;
+                    char_counter += tbSource.Text.Length;
+                    tbScore.Text = "Your CPM is: " + char_counter.ToString() + ", WPM: " + (char_counter / 5).ToString() + ", Wrong words: " + wrong_counter.ToString();
+                }else
+                {
+                    wrong_counter++;
+                    tbScore.Text = "Your CPM is: " + char_counter.ToString() + ", WPM: " + (char_counter / 5).ToString() + ", Wrong words: " + wrong_counter.ToString();
                 }
 
                 arr_counter++;
@@ -63,7 +67,7 @@ namespace lab_1_buttons_and_forms
         private void timer_Tick(object sender, EventArgs e)
         {
             lblTimer.Text =  (timer_ticks++).ToString();
-            if (timer_ticks > 60)
+            if (timer_ticks > 10)
             {
                 timer.Stop();
                 timer_ticks = 0;
@@ -71,7 +75,7 @@ namespace lab_1_buttons_and_forms
                 arr_counter = 0;
                 tbSource.Text = WORDS[arr_counter];
                 tbType.Text = "";
-                tbScore.Text = "Your CPM is: "+ char_counter.ToString() + " and WPM: " + (char_counter/5).ToString();
+                tbScore.Text = "Your CPM is: "+ char_counter.ToString() + ", WPM: " + (char_counter/5).ToString() + ",Wrong words: " + wrong_counter.ToString();
                 char_counter = 0;
             }
                 

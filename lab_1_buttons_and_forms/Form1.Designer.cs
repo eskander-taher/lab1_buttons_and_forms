@@ -81,9 +81,9 @@ namespace lab_1_buttons_and_forms
             // 
             // tbScore
             // 
-            this.tbScore.Location = new System.Drawing.Point(301, 279);
+            this.tbScore.Location = new System.Drawing.Point(239, 279);
             this.tbScore.Name = "tbScore";
-            this.tbScore.Size = new System.Drawing.Size(170, 23);
+            this.tbScore.Size = new System.Drawing.Size(285, 23);
             this.tbScore.TabIndex = 8;
             this.tbScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
