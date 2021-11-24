@@ -61,6 +61,7 @@ namespace lab_1_buttons_and_forms
             // 
             this.tbSource.Location = new System.Drawing.Point(301, 220);
             this.tbSource.Name = "tbSource";
+            this.tbSource.ReadOnly = true;
             this.tbSource.Size = new System.Drawing.Size(170, 23);
             this.tbSource.TabIndex = 5;
             this.tbSource.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -73,7 +74,7 @@ namespace lab_1_buttons_and_forms
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(383, 158);
+            this.lblTimer.Location = new System.Drawing.Point(377, 173);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(13, 15);
             this.lblTimer.TabIndex = 7;
@@ -83,6 +84,7 @@ namespace lab_1_buttons_and_forms
             // 
             this.tbScore.Location = new System.Drawing.Point(239, 279);
             this.tbScore.Name = "tbScore";
+            this.tbScore.ReadOnly = true;
             this.tbScore.Size = new System.Drawing.Size(285, 23);
             this.tbScore.TabIndex = 8;
             this.tbScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
