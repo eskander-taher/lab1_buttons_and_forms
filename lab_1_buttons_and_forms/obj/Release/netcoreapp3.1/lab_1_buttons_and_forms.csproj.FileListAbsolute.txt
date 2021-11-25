@@ -14,3 +14,4 @@ F:\1-UGATU\1ST sem 2ND year\Объектно-ориентированное пр
 F:\1-UGATU\1ST sem 2ND year\Объектно-ориентированное программирование\labs UGATU\lab1_buttons_and_forms\lab_1_buttons_and_forms\lab_1_buttons_and_forms\obj\Release\netcoreapp3.1\lab_1_buttons_and_forms.pdb
 F:\1-UGATU\1ST sem 2ND year\Объектно-ориентированное программирование\labs UGATU\lab1_buttons_and_forms\lab_1_buttons_and_forms\lab_1_buttons_and_forms\obj\Release\netcoreapp3.1\lab_1_buttons_and_forms.genruntimeconfig.cache
 F:\1-UGATU\1ST sem 2ND year\Объектно-ориентированное программирование\labs UGATU\lab1_buttons_and_forms\lab_1_buttons_and_forms\lab_1_buttons_and_forms\obj\Release\netcoreapp3.1\lab_1_buttons_and_forms.Properties.Resources.resources
+F:\1-UGATU\1ST sem 2ND year\Объектно-ориентированное программирование\labs UGATU\lab1_buttons_and_forms\lab_1_buttons_and_forms\lab_1_buttons_and_forms\obj\Release\netcoreapp3.1\lab_1_buttons_and_forms.csproj.AssemblyReference.cache

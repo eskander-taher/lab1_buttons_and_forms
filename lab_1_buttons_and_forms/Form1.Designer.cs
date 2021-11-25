@@ -41,14 +41,15 @@ namespace lab_1_buttons_and_forms
             this.pbTimer = new System.Windows.Forms.ProgressBar();
             this.rbDarkMode = new System.Windows.Forms.RadioButton();
             this.rbLightMode = new System.Windows.Forms.RadioButton();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbType
             // 
             this.tbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbType.Location = new System.Drawing.Point(301, 249);
+            this.tbType.Location = new System.Drawing.Point(239, 249);
             this.tbType.Name = "tbType";
-            this.tbType.Size = new System.Drawing.Size(170, 23);
+            this.tbType.Size = new System.Drawing.Size(285, 23);
             this.tbType.TabIndex = 2;
             this.tbType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbType.TextChanged += new System.EventHandler(this.tbType_TextChanged);
@@ -58,9 +59,9 @@ namespace lab_1_buttons_and_forms
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.BackColor = System.Drawing.Color.Lime;
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.Location = new System.Drawing.Point(301, 191);
+            this.btnStart.Location = new System.Drawing.Point(239, 191);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(170, 23);
+            this.btnStart.Size = new System.Drawing.Size(285, 23);
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = false;
@@ -69,10 +70,10 @@ namespace lab_1_buttons_and_forms
             // tbSource
             // 
             this.tbSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSource.Location = new System.Drawing.Point(301, 220);
+            this.tbSource.Location = new System.Drawing.Point(239, 220);
             this.tbSource.Name = "tbSource";
             this.tbSource.ReadOnly = true;
-            this.tbSource.Size = new System.Drawing.Size(170, 23);
+            this.tbSource.Size = new System.Drawing.Size(285, 23);
             this.tbSource.TabIndex = 5;
             this.tbSource.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -95,10 +96,10 @@ namespace lab_1_buttons_and_forms
             // tbScore
             // 
             this.tbScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbScore.Location = new System.Drawing.Point(239, 279);
+            this.tbScore.Location = new System.Drawing.Point(290, 279);
             this.tbScore.Name = "tbScore";
             this.tbScore.ReadOnly = true;
-            this.tbScore.Size = new System.Drawing.Size(285, 23);
+            this.tbScore.Size = new System.Drawing.Size(234, 23);
             this.tbScore.TabIndex = 8;
             this.tbScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -108,7 +109,7 @@ namespace lab_1_buttons_and_forms
             this.cbRecord.AutoSize = true;
             this.cbRecord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbRecord.ForeColor = System.Drawing.Color.White;
-            this.cbRecord.Location = new System.Drawing.Point(290, 338);
+            this.cbRecord.Location = new System.Drawing.Point(572, 125);
             this.cbRecord.Name = "cbRecord";
             this.cbRecord.Size = new System.Drawing.Size(194, 19);
             this.cbRecord.TabIndex = 10;
@@ -163,12 +164,23 @@ namespace lab_1_buttons_and_forms
             this.rbLightMode.UseVisualStyleBackColor = true;
             this.rbLightMode.Click += new System.EventHandler(this.rbLightMode_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(239, 278);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(42, 23);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.rbLightMode);
             this.Controls.Add(this.rbDarkMode);
             this.Controls.Add(this.pbTimer);
@@ -198,6 +210,7 @@ namespace lab_1_buttons_and_forms
         private System.Windows.Forms.ProgressBar pbTimer;
         private System.Windows.Forms.RadioButton rbDarkMode;
         private System.Windows.Forms.RadioButton rbLightMode;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

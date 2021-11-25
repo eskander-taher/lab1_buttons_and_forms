@@ -18,6 +18,7 @@ namespace lab_1_buttons_and_forms
         public int wrong_counter = 0;
         public bool started = false;
         public int timer_ticks = 60;
+        public int lbl_number = 1;
 
         public formMain()
         {
@@ -124,9 +125,6 @@ namespace lab_1_buttons_and_forms
             lblTitle.ForeColor = Color.White;
             pbTimer.ForeColor = Color.White;
             lblTimer.ForeColor = Color.White;
-            tbSource.ForeColor = Color.White;
-            tbType.ForeColor = Color.White;
-            tbScore.ForeColor = Color.White;
             cbRecord.ForeColor = Color.White;
             rbDarkMode.ForeColor = Color.White;
             rbLightMode.ForeColor = Color.White;
@@ -138,12 +136,29 @@ namespace lab_1_buttons_and_forms
             lblTitle.ForeColor = Color.Black;
             pbTimer.ForeColor = Color.Black;
             lblTimer.ForeColor = Color.Black;
-            tbSource.ForeColor = Color.Black;
-            tbType.ForeColor = Color.Black;
-            tbScore.ForeColor = Color.Black;
             cbRecord.ForeColor = Color.Black;
             rbDarkMode.ForeColor = Color.Black;
             rbLightMode.ForeColor = Color.Black;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            addLabel();
+        }
+        
+        private System.Windows.Forms.Label addLabel()
+        {
+            Label lbl = new Label();
+            this.Controls.Add(lbl);
+            lbl.Top = lbl_number + (191);
+            lbl.Left = tbScore.Left+ 285 + 10;
+            lbl.Width = 234;
+            lbl.Height = 23;
+            lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            lbl.Text = (this.lbl_number - 29).ToString() + "- " + tbScore.Text;
+            lbl.ForeColor = Color.Red;
+            lbl_number += 30;
+            return lbl;
         }
     }
 }
