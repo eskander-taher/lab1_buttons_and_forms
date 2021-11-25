@@ -28,6 +28,7 @@ namespace lab_1_buttons_and_forms
             tbType.Text = "";
             tbScore.Text = "Your CPM is: 0, WPM: 0, Wrong words: 0";
             wrong_counter = 0;
+            rbDarkMode.Checked = true;
 
             //timer.Stop();
             timer_ticks = 60;
@@ -49,6 +50,7 @@ namespace lab_1_buttons_and_forms
             timer_ticks = 60;
             lblTimer.Text = timer_ticks.ToString();
             started = true;
+            pbTimer.Value = 0;
             tbType.Focus();
         }
 
@@ -89,8 +91,14 @@ namespace lab_1_buttons_and_forms
         {
             lblTimer.Text =  (timer_ticks--).ToString();
 
+            //this conditional statement because progress bar can't handle floating points
+            if(timer_ticks > 20)
+                pbTimer.Value += 2;
+            else
+                pbTimer.Value += 1;
+
             //turn number color to red at the last 10 seconds
-            if(timer_ticks < 10)
+            if (timer_ticks < 10)
                 lblTimer.ForeColor = Color.Red;
 
             if (timer_ticks < 0)
@@ -106,7 +114,36 @@ namespace lab_1_buttons_and_forms
                 btnStart.Text = "Start";
                 lblTimer.ForeColor = Color.White;
                 started = false;
+                pbTimer.Value = 0;
             }   
+        }
+
+        private void rbDarkMode_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(64, 64, 64);
+            lblTitle.ForeColor = Color.White;
+            pbTimer.ForeColor = Color.White;
+            lblTimer.ForeColor = Color.White;
+            tbSource.ForeColor = Color.White;
+            tbType.ForeColor = Color.White;
+            tbScore.ForeColor = Color.White;
+            cbRecord.ForeColor = Color.White;
+            rbDarkMode.ForeColor = Color.White;
+            rbLightMode.ForeColor = Color.White;
+        }
+
+        private void rbLightMode_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.LightGray;
+            lblTitle.ForeColor = Color.Black;
+            pbTimer.ForeColor = Color.Black;
+            lblTimer.ForeColor = Color.Black;
+            tbSource.ForeColor = Color.Black;
+            tbType.ForeColor = Color.Black;
+            tbScore.ForeColor = Color.Black;
+            cbRecord.ForeColor = Color.Black;
+            rbDarkMode.ForeColor = Color.Black;
+            rbLightMode.ForeColor = Color.Black;
         }
     }
 }

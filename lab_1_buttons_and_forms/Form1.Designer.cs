@@ -36,9 +36,11 @@ namespace lab_1_buttons_and_forms
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblTimer = new System.Windows.Forms.Label();
             this.tbScore = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbRecord = new System.Windows.Forms.CheckBox();
-            this.lblTypeTest = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pbTimer = new System.Windows.Forms.ProgressBar();
+            this.rbDarkMode = new System.Windows.Forms.RadioButton();
+            this.rbLightMode = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // tbType
@@ -54,7 +56,8 @@ namespace lab_1_buttons_and_forms
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStart.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnStart.BackColor = System.Drawing.Color.Lime;
+            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStart.Location = new System.Drawing.Point(301, 191);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(170, 23);
@@ -75,7 +78,6 @@ namespace lab_1_buttons_and_forms
             // 
             // timer
             // 
-            this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // lblTimer
@@ -100,46 +102,78 @@ namespace lab_1_buttons_and_forms
             this.tbScore.TabIndex = 8;
             this.tbScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
-            // 
             // cbRecord
             // 
             this.cbRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbRecord.AutoSize = true;
+            this.cbRecord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbRecord.ForeColor = System.Drawing.Color.White;
-            this.cbRecord.Location = new System.Drawing.Point(288, 308);
+            this.cbRecord.Location = new System.Drawing.Point(290, 338);
             this.cbRecord.Name = "cbRecord";
             this.cbRecord.Size = new System.Drawing.Size(194, 19);
             this.cbRecord.TabIndex = 10;
             this.cbRecord.Text = "Keep tracking of my best record";
             this.cbRecord.UseVisualStyleBackColor = true;
             // 
-            // lblTypeTest
+            // lblTitle
             // 
-            this.lblTypeTest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTypeTest.AutoSize = true;
-            this.lblTypeTest.Font = new System.Drawing.Font("Segoe UI", 34F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTypeTest.ForeColor = System.Drawing.Color.White;
-            this.lblTypeTest.Location = new System.Drawing.Point(239, 89);
-            this.lblTypeTest.Name = "lblTypeTest";
-            this.lblTypeTest.Size = new System.Drawing.Size(289, 62);
-            this.lblTypeTest.TabIndex = 11;
-            this.lblTypeTest.Text = "TYPING TEST";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 34F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(239, 60);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(289, 62);
+            this.lblTitle.TabIndex = 11;
+            this.lblTitle.Text = "TYPING TEST";
+            // 
+            // pbTimer
+            // 
+            this.pbTimer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbTimer.Location = new System.Drawing.Point(239, 125);
+            this.pbTimer.Name = "pbTimer";
+            this.pbTimer.Size = new System.Drawing.Size(285, 23);
+            this.pbTimer.TabIndex = 12;
+            // 
+            // rbDarkMode
+            // 
+            this.rbDarkMode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbDarkMode.AutoSize = true;
+            this.rbDarkMode.ForeColor = System.Drawing.Color.White;
+            this.rbDarkMode.Location = new System.Drawing.Point(301, 309);
+            this.rbDarkMode.Name = "rbDarkMode";
+            this.rbDarkMode.Size = new System.Drawing.Size(83, 19);
+            this.rbDarkMode.TabIndex = 13;
+            this.rbDarkMode.TabStop = true;
+            this.rbDarkMode.Text = "Dark mode";
+            this.rbDarkMode.UseVisualStyleBackColor = true;
+            this.rbDarkMode.Click += new System.EventHandler(this.rbDarkMode_Click);
+            // 
+            // rbLightMode
+            // 
+            this.rbLightMode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbLightMode.AutoSize = true;
+            this.rbLightMode.ForeColor = System.Drawing.Color.White;
+            this.rbLightMode.Location = new System.Drawing.Point(385, 309);
+            this.rbLightMode.Name = "rbLightMode";
+            this.rbLightMode.Size = new System.Drawing.Size(86, 19);
+            this.rbLightMode.TabIndex = 14;
+            this.rbLightMode.TabStop = true;
+            this.rbLightMode.Text = "Light mode";
+            this.rbLightMode.UseVisualStyleBackColor = true;
+            this.rbLightMode.Click += new System.EventHandler(this.rbLightMode_Click);
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblTypeTest);
+            this.Controls.Add(this.rbLightMode);
+            this.Controls.Add(this.rbDarkMode);
+            this.Controls.Add(this.pbTimer);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.cbRecord);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbScore);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.tbSource);
@@ -159,9 +193,11 @@ namespace lab_1_buttons_and_forms
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.TextBox tbScore;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbRecord;
-        private System.Windows.Forms.Label lblTypeTest;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ProgressBar pbTimer;
+        private System.Windows.Forms.RadioButton rbDarkMode;
+        private System.Windows.Forms.RadioButton rbLightMode;
     }
 }
 
