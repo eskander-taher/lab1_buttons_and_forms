@@ -45,6 +45,7 @@ namespace lab_1_buttons_and_forms
             this.cbDefault = new System.Windows.Forms.CheckBox();
             this.ttStart = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.notification = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // tbType
@@ -83,6 +84,7 @@ namespace lab_1_buttons_and_forms
             // 
             // timer
             // 
+            this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // lblTimer
@@ -197,6 +199,11 @@ namespace lab_1_buttons_and_forms
             this.cbDefault.UseVisualStyleBackColor = true;
             this.cbDefault.CheckedChanged += new System.EventHandler(this.cbDefault_CheckedChanged);
             // 
+            // notification
+            // 
+            this.notification.Text = "notifyIcon1";
+            this.notification.Visible = true;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -238,6 +245,7 @@ namespace lab_1_buttons_and_forms
         private System.Windows.Forms.CheckBox cbDefault;
         private System.Windows.Forms.ToolTip ttStart;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.NotifyIcon notification;
     }
 }
 
