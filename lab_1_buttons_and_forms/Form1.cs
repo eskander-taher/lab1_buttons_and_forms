@@ -19,6 +19,9 @@ namespace lab_1_buttons_and_forms
         public bool started = false;
         public int timer_ticks = 60;
         public int lbl_number = 1;
+        public int lbl_rank = 1;
+        public int new_top;
+
 
         public formMain()
         {
@@ -30,6 +33,7 @@ namespace lab_1_buttons_and_forms
             tbScore.Text = "Your CPM is: 0, WPM: 0, Wrong words: 0";
             wrong_counter = 0;
             rbDarkMode.Checked = true;
+
 
             //timer.Stop();
             timer_ticks = 60;
@@ -125,7 +129,6 @@ namespace lab_1_buttons_and_forms
             lblTitle.ForeColor = Color.White;
             pbTimer.ForeColor = Color.White;
             lblTimer.ForeColor = Color.White;
-            cbRecord.ForeColor = Color.White;
             rbDarkMode.ForeColor = Color.White;
             rbLightMode.ForeColor = Color.White;
         }
@@ -136,7 +139,6 @@ namespace lab_1_buttons_and_forms
             lblTitle.ForeColor = Color.Black;
             pbTimer.ForeColor = Color.Black;
             lblTimer.ForeColor = Color.Black;
-            cbRecord.ForeColor = Color.Black;
             rbDarkMode.ForeColor = Color.Black;
             rbLightMode.ForeColor = Color.Black;
         }
@@ -150,15 +152,46 @@ namespace lab_1_buttons_and_forms
         {
             Label lbl = new Label();
             this.Controls.Add(lbl);
-            lbl.Top = lbl_number + (191);
-            lbl.Left = tbScore.Left+ 285 + 10;
-            lbl.Width = 234;
+            lbl.Top = lbl_number + 50;
+            lbl.Left = 5;
+            lbl.Width = 250;
             lbl.Height = 23;
-            lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            lbl.Text = (this.lbl_number - 29).ToString() + "- " + tbScore.Text;
-            lbl.ForeColor = Color.Red;
             lbl_number += 30;
+            lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            lbl.Text = (lbl_rank++).ToString() + "- " + tbScore.Text;
+            lbl.ForeColor = Color.White;
+            lbl.BackColor = Color.Black;
             return lbl;
+        }
+
+        private void cbBackColor_TextChanged(object sender, EventArgs e)
+        {
+            if (string.Equals(cbBackColor.Text, "red"))
+                BackColor = Color.Red;
+            if(string.Equals(cbBackColor.Text, "blue"))
+                BackColor = Color.Blue;
+            if(string.Equals(cbBackColor.Text, "yellow"))
+                BackColor = Color.Yellow;
+            if(string.Equals(cbBackColor.Text, "green"))
+                BackColor = Color.Green;
+            if(string.Equals(cbBackColor.Text, "brown"))
+                BackColor = Color.Brown;
+
+        }
+
+        private void cbDefault_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbDefault.Checked == true)
+            {
+                rbDarkMode.Checked = true;
+                cbBackColor.Text = "Background color";
+                BackColor = Color.FromArgb(64, 64, 64);
+                lblTitle.ForeColor = Color.White;
+                pbTimer.ForeColor = Color.White;
+                lblTimer.ForeColor = Color.White;
+                rbDarkMode.ForeColor = Color.White;
+                rbLightMode.ForeColor = Color.White;
+            }
         }
     }
 }

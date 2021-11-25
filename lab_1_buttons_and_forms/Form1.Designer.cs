@@ -36,12 +36,15 @@ namespace lab_1_buttons_and_forms
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblTimer = new System.Windows.Forms.Label();
             this.tbScore = new System.Windows.Forms.TextBox();
-            this.cbRecord = new System.Windows.Forms.CheckBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbTimer = new System.Windows.Forms.ProgressBar();
             this.rbDarkMode = new System.Windows.Forms.RadioButton();
             this.rbLightMode = new System.Windows.Forms.RadioButton();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cbBackColor = new System.Windows.Forms.ComboBox();
+            this.cbDefault = new System.Windows.Forms.CheckBox();
+            this.ttStart = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // tbType
@@ -64,6 +67,7 @@ namespace lab_1_buttons_and_forms
             this.btnStart.Size = new System.Drawing.Size(285, 23);
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Start";
+            this.ttStart.SetToolTip(this.btnStart, "Start the test button");
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -102,19 +106,6 @@ namespace lab_1_buttons_and_forms
             this.tbScore.Size = new System.Drawing.Size(234, 23);
             this.tbScore.TabIndex = 8;
             this.tbScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cbRecord
-            // 
-            this.cbRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbRecord.AutoSize = true;
-            this.cbRecord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbRecord.ForeColor = System.Drawing.Color.White;
-            this.cbRecord.Location = new System.Drawing.Point(572, 125);
-            this.cbRecord.Name = "cbRecord";
-            this.cbRecord.Size = new System.Drawing.Size(194, 19);
-            this.cbRecord.TabIndex = 10;
-            this.cbRecord.Text = "Keep tracking of my best record";
-            this.cbRecord.UseVisualStyleBackColor = true;
             // 
             // lblTitle
             // 
@@ -166,6 +157,7 @@ namespace lab_1_buttons_and_forms
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSave.Location = new System.Drawing.Point(239, 278);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(42, 23);
@@ -174,18 +166,50 @@ namespace lab_1_buttons_and_forms
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cbBackColor
+            // 
+            this.cbBackColor.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbBackColor.FormattingEnabled = true;
+            this.cbBackColor.Items.AddRange(new object[] {
+            "red",
+            "blue",
+            "yellow",
+            "green",
+            "brown"});
+            this.cbBackColor.Location = new System.Drawing.Point(544, 191);
+            this.cbBackColor.Name = "cbBackColor";
+            this.cbBackColor.Size = new System.Drawing.Size(121, 23);
+            this.cbBackColor.TabIndex = 16;
+            this.cbBackColor.Text = "Background color";
+            this.cbBackColor.TextChanged += new System.EventHandler(this.cbBackColor_TextChanged);
+            // 
+            // cbDefault
+            // 
+            this.cbDefault.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbDefault.AutoSize = true;
+            this.cbDefault.ForeColor = System.Drawing.Color.White;
+            this.cbDefault.Location = new System.Drawing.Point(544, 221);
+            this.cbDefault.Name = "cbDefault";
+            this.cbDefault.Size = new System.Drawing.Size(108, 19);
+            this.cbDefault.TabIndex = 17;
+            this.cbDefault.Text = "Defualt settings";
+            this.toolTip1.SetToolTip(this.cbDefault, "return the programm to default settings");
+            this.cbDefault.UseVisualStyleBackColor = true;
+            this.cbDefault.CheckedChanged += new System.EventHandler(this.cbDefault_CheckedChanged);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbDefault);
+            this.Controls.Add(this.cbBackColor);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.rbLightMode);
             this.Controls.Add(this.rbDarkMode);
             this.Controls.Add(this.pbTimer);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.cbRecord);
             this.Controls.Add(this.tbScore);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.tbSource);
@@ -205,12 +229,15 @@ namespace lab_1_buttons_and_forms
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.TextBox tbScore;
-        private System.Windows.Forms.CheckBox cbRecord;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ProgressBar pbTimer;
         private System.Windows.Forms.RadioButton rbDarkMode;
         private System.Windows.Forms.RadioButton rbLightMode;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cbBackColor;
+        private System.Windows.Forms.CheckBox cbDefault;
+        private System.Windows.Forms.ToolTip ttStart;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
