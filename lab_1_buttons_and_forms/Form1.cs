@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace lab_1_buttons_and_forms
 {
@@ -20,8 +21,7 @@ namespace lab_1_buttons_and_forms
         public int timer_ticks = 60;
         public int lbl_number = 1;
         public int lbl_rank = 1;
-        public int new_top;
-
+        public int records = 1;
 
         public formMain()
         {
@@ -33,7 +33,6 @@ namespace lab_1_buttons_and_forms
             tbScore.Text = "Your CPM is: 0, WPM: 0, Wrong words: 0";
             wrong_counter = 0;
             rbDarkMode.Checked = true;
-
 
             //timer.Stop();
             timer_ticks = 60;
@@ -78,7 +77,8 @@ namespace lab_1_buttons_and_forms
                 {
                     char_counter += (tbSource.Text.Length + 1);
                     tbScore.Text = "Your CPM is: " + char_counter.ToString() + ", WPM: " + (char_counter / 5).ToString() + ", Wrong words: " + wrong_counter.ToString();
-                }else
+                }
+                else
                 {
                     wrong_counter++;
                     tbScore.Text = "Your CPM is: " + char_counter.ToString() + ", WPM: " + (char_counter / 5).ToString() + ", Wrong words: " + wrong_counter.ToString();
@@ -106,6 +106,7 @@ namespace lab_1_buttons_and_forms
             if (timer_ticks < 10)
                 lblTimer.ForeColor = Color.Red;
 
+
             if (timer_ticks < 0)
             {
                 timer.Stop();
@@ -131,6 +132,7 @@ namespace lab_1_buttons_and_forms
             lblTimer.ForeColor = Color.White;
             rbDarkMode.ForeColor = Color.White;
             rbLightMode.ForeColor = Color.White;
+            cbDefault.ForeColor = Color.White;
         }
 
         private void rbLightMode_Click(object sender, EventArgs e)
@@ -141,11 +143,16 @@ namespace lab_1_buttons_and_forms
             lblTimer.ForeColor = Color.Black;
             rbDarkMode.ForeColor = Color.Black;
             rbLightMode.ForeColor = Color.Black;
+            cbDefault.ForeColor = Color.Black;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            addLabel();
+            if (records <= 5 && (char_counter != 0 || wrong_counter != 0))
+            {
+                addLabel();
+                records++;
+            }
         }
         
         private System.Windows.Forms.Label addLabel()
@@ -154,7 +161,7 @@ namespace lab_1_buttons_and_forms
             this.Controls.Add(lbl);
             lbl.Top = lbl_number + 50;
             lbl.Left = 5;
-            lbl.Width = 250;
+            lbl.Width = 260;
             lbl.Height = 23;
             lbl_number += 30;
             lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -176,7 +183,6 @@ namespace lab_1_buttons_and_forms
                 BackColor = Color.Green;
             if(string.Equals(cbBackColor.Text, "brown"))
                 BackColor = Color.Brown;
-
         }
 
         private void cbDefault_CheckedChanged(object sender, EventArgs e)
@@ -184,6 +190,7 @@ namespace lab_1_buttons_and_forms
             if(cbDefault.Checked == true)
             {
                 rbDarkMode.Checked = true;
+                btnStart.Text = "Start";
                 cbBackColor.Text = "Background color";
                 BackColor = Color.FromArgb(64, 64, 64);
                 lblTitle.ForeColor = Color.White;

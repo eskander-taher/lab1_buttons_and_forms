@@ -43,9 +43,7 @@ namespace lab_1_buttons_and_forms
             this.btnSave = new System.Windows.Forms.Button();
             this.cbBackColor = new System.Windows.Forms.ComboBox();
             this.cbDefault = new System.Windows.Forms.CheckBox();
-            this.ttStart = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.notification = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // tbType
@@ -56,6 +54,7 @@ namespace lab_1_buttons_and_forms
             this.tbType.Size = new System.Drawing.Size(285, 23);
             this.tbType.TabIndex = 2;
             this.tbType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.tbType, "Typing field");
             this.tbType.TextChanged += new System.EventHandler(this.tbType_TextChanged);
             // 
             // btnStart
@@ -68,7 +67,7 @@ namespace lab_1_buttons_and_forms
             this.btnStart.Size = new System.Drawing.Size(285, 23);
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Start";
-            this.ttStart.SetToolTip(this.btnStart, "Start the test button");
+            this.toolTip1.SetToolTip(this.btnStart, "Press and Start typing for the test");
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -81,6 +80,7 @@ namespace lab_1_buttons_and_forms
             this.tbSource.Size = new System.Drawing.Size(285, 23);
             this.tbSource.TabIndex = 5;
             this.tbSource.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.tbSource, "Typing test words");
             // 
             // timer
             // 
@@ -140,6 +140,7 @@ namespace lab_1_buttons_and_forms
             this.rbDarkMode.TabIndex = 13;
             this.rbDarkMode.TabStop = true;
             this.rbDarkMode.Text = "Dark mode";
+            this.toolTip1.SetToolTip(this.rbDarkMode, "make programm theme iin dark mode");
             this.rbDarkMode.UseVisualStyleBackColor = true;
             this.rbDarkMode.Click += new System.EventHandler(this.rbDarkMode_Click);
             // 
@@ -154,6 +155,7 @@ namespace lab_1_buttons_and_forms
             this.rbLightMode.TabIndex = 14;
             this.rbLightMode.TabStop = true;
             this.rbLightMode.Text = "Light mode";
+            this.toolTip1.SetToolTip(this.rbLightMode, "make programm theme light mode");
             this.rbLightMode.UseVisualStyleBackColor = true;
             this.rbLightMode.Click += new System.EventHandler(this.rbLightMode_Click);
             // 
@@ -165,6 +167,7 @@ namespace lab_1_buttons_and_forms
             this.btnSave.Size = new System.Drawing.Size(42, 23);
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
+            this.toolTip1.SetToolTip(this.btnSave, "Save your records");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -183,6 +186,7 @@ namespace lab_1_buttons_and_forms
             this.cbBackColor.Size = new System.Drawing.Size(121, 23);
             this.cbBackColor.TabIndex = 16;
             this.cbBackColor.Text = "Background color";
+            this.toolTip1.SetToolTip(this.cbBackColor, "change the background color");
             this.cbBackColor.TextChanged += new System.EventHandler(this.cbBackColor_TextChanged);
             // 
             // cbDefault
@@ -198,11 +202,6 @@ namespace lab_1_buttons_and_forms
             this.toolTip1.SetToolTip(this.cbDefault, "return the programm to default settings");
             this.cbDefault.UseVisualStyleBackColor = true;
             this.cbDefault.CheckedChanged += new System.EventHandler(this.cbDefault_CheckedChanged);
-            // 
-            // notification
-            // 
-            this.notification.Text = "notifyIcon1";
-            this.notification.Visible = true;
             // 
             // formMain
             // 
@@ -243,9 +242,7 @@ namespace lab_1_buttons_and_forms
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox cbBackColor;
         private System.Windows.Forms.CheckBox cbDefault;
-        private System.Windows.Forms.ToolTip ttStart;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.NotifyIcon notification;
     }
 }
 
