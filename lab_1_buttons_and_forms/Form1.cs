@@ -23,9 +23,9 @@ namespace lab_1_buttons_and_forms
         public int lbl_rank = 1;
         public int records = 1;
 
+        //initilze the programm with default values
         public formMain()
         {
-            //initilze the programm with default values
             InitializeComponent();
             arr_counter = 0;
             tbSource.Text = WORDS[arr_counter];
@@ -33,14 +33,14 @@ namespace lab_1_buttons_and_forms
             tbScore.Text = "Your CPM is: 0, WPM: 0, Wrong words: 0";
             wrong_counter = 0;
             rbDarkMode.Checked = true;
-
-            //timer.Stop();
             timer_ticks = 60;
             lblTimer.Text = timer_ticks.ToString();
             started = false;
+            tbType.ReadOnly = true;
             tbType.Focus();
         }
 
+        //allow changes to accur when program starts
         private void btnStart_Click(object sender, EventArgs e)
         {
             //restart the programm with all fields defualt values
@@ -55,22 +55,22 @@ namespace lab_1_buttons_and_forms
             lblTimer.Text = timer_ticks.ToString();
             started = true;
             pbTimer.Value = 0;
+            tbType.ReadOnly = false;
             tbType.Focus();
         }
 
+        //main logic of the program
         private void tbType_TextChanged(object sender, EventArgs e)
         {
             //check if programm restarted to start the timer
             if (string.Equals(btnStart.Text,"Restart") && started == true)
                 timer.Start();
-
             //check if the space was typed in order to start comparing the two strings
             while (tbType.Text.EndsWith(" ") && started == true)
             {
                 //if strings bank reaches end, start from the begining
                 if (arr_counter >= WORDS.Length - 1)
                     arr_counter = 0;
-
                 //remove the space to start comparing
                 tbType.Text = tbType.Text.Remove(tbType.Text.Length - 1);
                 if (string.Equals(WORDS[arr_counter], tbType.Text))
@@ -83,8 +83,7 @@ namespace lab_1_buttons_and_forms
                     wrong_counter++;
                     tbScore.Text = "Your CPM is: " + char_counter.ToString() + ", WPM: " + (char_counter / 5).ToString() + ", Wrong words: " + wrong_counter.ToString();
                 }
-                
-                //move to next index and add the its value to the source text box
+                //move to next index and add its value to the source text box
                 arr_counter++;
                 tbSource.Text = WORDS[arr_counter];
                 tbType.Text = "";
@@ -95,20 +94,18 @@ namespace lab_1_buttons_and_forms
         private void timer_Tick(object sender, EventArgs e)
         {
             lblTimer.Text =  (timer_ticks--).ToString();
-
             //this conditional statement because progress bar can't handle floating points
             if(timer_ticks > 20)
                 pbTimer.Value += 2;
             else
                 pbTimer.Value += 1;
-
             //turn number color to red at the last 10 seconds
             if (timer_ticks < 10)
                 lblTimer.ForeColor = Color.Red;
-
-
+            //return to default setting when timers ends
             if (timer_ticks < 1)
             {
+                tbType.ReadOnly = true;
                 timer.Stop();
                 timer_ticks = 60;
                 lblTimer.Text = "60";
@@ -124,6 +121,7 @@ namespace lab_1_buttons_and_forms
             }   
         }
 
+        //change look to drark mode when radio button is clicked
         private void rbDarkMode_Click(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(64, 64, 64);
@@ -135,6 +133,7 @@ namespace lab_1_buttons_and_forms
             cbDefault.ForeColor = Color.White;
         }
 
+        //change look to light mode when radio button is clicked
         private void rbLightMode_Click(object sender, EventArgs e)
         {
             BackColor = Color.LightGray;
@@ -146,6 +145,7 @@ namespace lab_1_buttons_and_forms
             cbDefault.ForeColor = Color.Black;
         }
 
+        //save record
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (records <= 10 && (char_counter != 0 || wrong_counter != 0))
@@ -154,7 +154,8 @@ namespace lab_1_buttons_and_forms
                 records++;
             }
         }
-        
+
+        //new label generator
         private System.Windows.Forms.Label addLabel()
         {
             Label lbl = new Label();
@@ -171,6 +172,7 @@ namespace lab_1_buttons_and_forms
             return lbl;
         }
 
+        //change background color
         private void cbBackColor_TextChanged(object sender, EventArgs e)
         {
             if (string.Equals(cbBackColor.Text, "red"))
@@ -184,7 +186,8 @@ namespace lab_1_buttons_and_forms
             if(string.Equals(cbBackColor.Text, "brown"))
                 BackColor = Color.Brown;
         }
-
+        
+        //change values to default setting when check box is clicked
         private void cbDefault_CheckedChanged(object sender, EventArgs e)
         {
             if(cbDefault.Checked == true)
