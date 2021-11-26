@@ -98,6 +98,7 @@ namespace lab_1_buttons_and_forms
             this.lblTimer.Size = new System.Drawing.Size(58, 37);
             this.lblTimer.TabIndex = 7;
             this.lblTimer.Text = "0";
+            this.toolTip1.SetToolTip(this.lblTimer, "Timer");
             // 
             // tbScore
             // 
@@ -108,6 +109,7 @@ namespace lab_1_buttons_and_forms
             this.tbScore.Size = new System.Drawing.Size(234, 23);
             this.tbScore.TabIndex = 8;
             this.tbScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.tbScore, "Your current score");
             // 
             // lblTitle
             // 
@@ -128,6 +130,7 @@ namespace lab_1_buttons_and_forms
             this.pbTimer.Name = "pbTimer";
             this.pbTimer.Size = new System.Drawing.Size(285, 23);
             this.pbTimer.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.pbTimer, "Timer");
             // 
             // rbDarkMode
             // 
@@ -140,7 +143,7 @@ namespace lab_1_buttons_and_forms
             this.rbDarkMode.TabIndex = 13;
             this.rbDarkMode.TabStop = true;
             this.rbDarkMode.Text = "Dark mode";
-            this.toolTip1.SetToolTip(this.rbDarkMode, "make programm theme iin dark mode");
+            this.toolTip1.SetToolTip(this.rbDarkMode, "Make program\'s theme iin dark mode");
             this.rbDarkMode.UseVisualStyleBackColor = true;
             this.rbDarkMode.Click += new System.EventHandler(this.rbDarkMode_Click);
             // 
@@ -155,7 +158,7 @@ namespace lab_1_buttons_and_forms
             this.rbLightMode.TabIndex = 14;
             this.rbLightMode.TabStop = true;
             this.rbLightMode.Text = "Light mode";
-            this.toolTip1.SetToolTip(this.rbLightMode, "make programm theme light mode");
+            this.toolTip1.SetToolTip(this.rbLightMode, "Make program\'s theme light mode");
             this.rbLightMode.UseVisualStyleBackColor = true;
             this.rbLightMode.Click += new System.EventHandler(this.rbLightMode_Click);
             // 
@@ -167,7 +170,7 @@ namespace lab_1_buttons_and_forms
             this.btnSave.Size = new System.Drawing.Size(42, 23);
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
-            this.toolTip1.SetToolTip(this.btnSave, "Save your records");
+            this.toolTip1.SetToolTip(this.btnSave, "Save your record");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -186,7 +189,7 @@ namespace lab_1_buttons_and_forms
             this.cbBackColor.Size = new System.Drawing.Size(121, 23);
             this.cbBackColor.TabIndex = 16;
             this.cbBackColor.Text = "Background color";
-            this.toolTip1.SetToolTip(this.cbBackColor, "change the background color");
+            this.toolTip1.SetToolTip(this.cbBackColor, "Change the background color");
             this.cbBackColor.TextChanged += new System.EventHandler(this.cbBackColor_TextChanged);
             // 
             // cbDefault
@@ -199,7 +202,7 @@ namespace lab_1_buttons_and_forms
             this.cbDefault.Size = new System.Drawing.Size(108, 19);
             this.cbDefault.TabIndex = 17;
             this.cbDefault.Text = "Defualt settings";
-            this.toolTip1.SetToolTip(this.cbDefault, "return the programm to default settings");
+            this.toolTip1.SetToolTip(this.cbDefault, "Return the program to default settings");
             this.cbDefault.UseVisualStyleBackColor = true;
             this.cbDefault.CheckedChanged += new System.EventHandler(this.cbDefault_CheckedChanged);
             // 

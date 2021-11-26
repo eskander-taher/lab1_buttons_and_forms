@@ -107,7 +107,7 @@ namespace lab_1_buttons_and_forms
                 lblTimer.ForeColor = Color.Red;
 
 
-            if (timer_ticks < 0)
+            if (timer_ticks < 1)
             {
                 timer.Stop();
                 timer_ticks = 60;
@@ -148,7 +148,7 @@ namespace lab_1_buttons_and_forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (records <= 5 && (char_counter != 0 || wrong_counter != 0))
+            if (records <= 10 && (char_counter != 0 || wrong_counter != 0))
             {
                 addLabel();
                 records++;
@@ -164,7 +164,7 @@ namespace lab_1_buttons_and_forms
             lbl.Width = 260;
             lbl.Height = 23;
             lbl_number += 30;
-            lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            lbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             lbl.Text = (lbl_rank++).ToString() + "- " + tbScore.Text;
             lbl.ForeColor = Color.White;
             lbl.BackColor = Color.Black;
@@ -198,6 +198,7 @@ namespace lab_1_buttons_and_forms
                 lblTimer.ForeColor = Color.White;
                 rbDarkMode.ForeColor = Color.White;
                 rbLightMode.ForeColor = Color.White;
+                cbDefault.ForeColor = Color.White;
             }
         }
     }
